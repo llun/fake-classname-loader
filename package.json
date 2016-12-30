@@ -1,0 +1,25 @@
+{
+  "name": "fake-classnames-loader",
+  "version": "1.0.0",
+  "description": "Webpack loader to generate fake classes from any input",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "ava": {
+    "files": [
+      "test.js"
+    ],
+    "failFast": true
+  },
+  "author": "Maythee Anegboonlap<null@llun.me>",
+  "license": "ISC",
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "memory-fs": "^0.4.1",
+    "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "loader-utils": "^0.2.16"
+  }
+}
