@@ -18,8 +18,5 @@
     "ava": "^0.17.0",
     "memory-fs": "^0.4.1",
     "webpack": "^1.14.0"
-  },
-  "dependencies": {
-    "loader-utils": "^0.2.16"
   }
 }
