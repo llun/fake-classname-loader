@@ -3,7 +3,7 @@
 Generate class name from property or input similar to classnames-loader
 but not loading content or processing from actual content.
 
-This make test compilation for css faster.
+This make css compilation for testing faster.
 
 ### Installation
 
