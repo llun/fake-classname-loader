@@ -10,16 +10,16 @@ module.exports.pitch = function(remainingRequest) {
   return `
 'use strict'
 exports = module.exports = (function () {
-  var p = new Proxy(function() {
+  var proxy = new Proxy(function() {
     var args = Array.prototype.slice.call(arguments)
     return args.map(function(item) { return '${name}_' + item }).join(' ')
   }, {
     get: function (target, name) {
-      if (name === 'default') return target
-      return '${name}_' + name
+      if (name === 'default') return proxy
+      return '${name}_' + name.toString()
     }
   })
-  return p
+  return proxy
 })()
 `
 }
