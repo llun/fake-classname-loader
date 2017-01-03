@@ -45,6 +45,11 @@ test('generate multiple classnames base on hash', t => {
 })
 
 test('generate multiple classnames from mix input', t => {
-  t.is(empty('class1', { class2: true, class3: false }),
+  t.is(
+    empty('class1', { class2: true, class3: false }),
     'empty_class1 empty_class2')
+  t.is(
+    empty('class1', { class2: false, class3: true }, 'class4'),
+    'empty_class1 empty_class3 empty_class4')
 })
+
