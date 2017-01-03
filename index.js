@@ -12,7 +12,13 @@ module.exports.pitch = function(remainingRequest) {
 exports = module.exports = (function () {
   var proxy = new Proxy(function() {
     var args = Array.prototype.slice.call(arguments)
-    return args.map(function(item) { return '${name}_' + item }).join(' ')
+      .map(function(item) {
+        if (typeof item === 'string') return item
+        return ''
+      })
+      .map(function(item) { return '${name}_' + item })
+      .join(' ')
+    return args
   }, {
     get: function (target, name) {
       if (name === 'default') return proxy
