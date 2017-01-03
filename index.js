@@ -13,10 +13,17 @@ exports = module.exports = (function () {
   var proxy = new Proxy(function() {
     var args = Array.prototype.slice.call(arguments)
       .map(function(item) {
-        if (typeof item === 'string') return item
-        return ''
+        if (typeof item === 'object') {
+          var classes = ''
+          for (var key in item) {
+            if (item[key]) {
+              classes += ' ${name}_' + key
+            }
+          }
+          return classes.trim()
+        }
+        return '${name}_' + item
       })
-      .map(function(item) { return '${name}_' + item })
       .join(' ')
     return args
   }, {

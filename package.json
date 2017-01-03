@@ -1,6 +1,6 @@
 {
   "name": "fake-classnames-loader",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Webpack loader to generate fake classes from any input",
   "main": "index.js",
   "scripts": {
